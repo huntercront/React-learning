@@ -1,0 +1,36 @@
+.icon-btn {
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 1rem;
+  transition: 200ms ease-in;
+  cursor: pointer;
+  &-md {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.75rem;
+  }
+  &-ghost {
+    background: transparent;
+    transition-property: background, color;
+    color: #888888;
+    &:hover {
+      background: #fafafa;
+      color: #08060d;
+    }
+  }
+  & .svg-icon {
+    width: 1em;
+    height: 1em;
+    color: currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.quantity {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  position: relative;
+  &-mark {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 1rem;
+    background: currentColor;
+  }
+  &-in-stock {
+    color: #01d957;
+    background: #d0ffe3;
+  }
+  &-out-stock &-mark {
+    color: #ff383c;
+    background: #ffe2e3;
+  }
+  &-count {
+    color: #08060d;
+  }
+}

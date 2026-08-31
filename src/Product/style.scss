@@ -1,0 +1,73 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  &-top {
+    position: relative;
+    width: 100%;
+  }
+  &-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #fafafa;
+    border-radius: 1rem;
+    overflow: hidden;
+    &:before {
+      content: "";
+      display: table;
+      padding-bottom: 120%;
+    }
+    & img {
+      position: absolute;
+      height: 80%;
+      width: auto;
+    }
+  }
+  &-price {
+    font-weight: 500;
+    font-size: 1.25rem;
+    &:after {
+      content: "€";
+      margin-left: 0.125em;
+    }
+  }
+
+  &-descr {
+    font-size: 0.875rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    user-select: none;
+    color: #666;
+    margin: 0.5rem 0 1rem 0;
+  }
+  &-tags {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
+  &-to-card {
+    margin-top: auto;
+  }
+  &-name {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0.75rem 0 0.5rem 0;
+    transition: color 200ms ease;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover &-name {
+    color: #f73520;
+  }
+}

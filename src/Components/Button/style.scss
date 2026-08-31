@@ -1,0 +1,21 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  line-height: 1;
+  font-size: 0.85rem;
+  transition: 250ms ease-in;
+  &-main {
+    background: #08060d;
+    color: white;
+    transition-property: background;
+    &:hover {
+      background: #393641;
+    }
+  }
+}
