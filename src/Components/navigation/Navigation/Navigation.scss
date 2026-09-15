@@ -20,6 +20,7 @@
         transition-property: color, background;
         &:hover {
           background: rgba($color: #f73520, $alpha: 0.05);
+          color: #f73520;
         }
         &.active {
           color: #f73520;

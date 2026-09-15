@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import IconButton from "../IconButton/IconButton";
 import CloseIcon from "../svg-Icons/CloseIcon";
+import { motion } from "motion/react";
 import "./style.scss";
 function Modal(props) {
   const {
@@ -32,8 +33,21 @@ function Modal(props) {
   if (!isOpen) return null;
 
   return (
-    <div className={`modal ${sizeClass} ${paddingClass}`} onClick={onClose}>
-      <div className="modal-dialog">
+    <motion.div
+      className={`modal ${sizeClass} ${paddingClass}`}
+      onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.15 }}
+    >
+      <motion.div
+        className="modal-dialog"
+        initial={{ y: 50, scale: 0.9, opacity: 0 }}
+        animate={{ y: 0, scale: 1, opacity: 1 }}
+        exit={{ y: 50, scale: 0.9, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      >
         <div className="modal-content" onClick={onClickModalHandler}>
           {modalHeader && (
             <div className="modal-header">
@@ -52,8 +66,8 @@ function Modal(props) {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 export default Modal;

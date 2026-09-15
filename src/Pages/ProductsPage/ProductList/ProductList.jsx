@@ -3,6 +3,7 @@ import Product from "../Product/Product";
 import Preloader from "../../../Components/Preloader/Preloader";
 import ProductModal from "../ProductModal/ProductModal";
 import EmptyContent from "../../../Components/EmptyContent/EmptyContent";
+import { AnimatePresence } from "motion/react";
 import "./ProductList.scss";
 function ProductList() {
   const {
@@ -30,13 +31,16 @@ function ProductList() {
 
   return (
     <>
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          isOpen={!!selectedProduct}
-          onClose={handleCloseModal}
-        />
-      )}
+      <AnimatePresence>
+        {selectedProduct && (
+          <ProductModal
+            key={selectedProduct.id}
+            product={selectedProduct}
+            isOpen={!!selectedProduct}
+            onClose={handleCloseModal}
+          />
+        )}
+      </AnimatePresence>
       <ul className="no-list products products-grid">
         {products.map((product) => (
           <li className="product-wrap" key={product.id}>
