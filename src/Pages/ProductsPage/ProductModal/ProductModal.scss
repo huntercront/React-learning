@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  border: radius 1rem;
   overflow: hidden;
   &-info,
   &-price-info,
@@ -10,7 +9,7 @@
   &-header {
     padding: 0.5rem 1.5rem;
   }
-  &-img {
+  &-imges {
     position: relative;
     display: flex;
     justify-content: center;
@@ -23,7 +22,7 @@
       display: table;
       padding-bottom: 120%;
     }
-    & img {
+    & > img {
       position: absolute;
       height: 80%;
       width: auto;
@@ -37,6 +36,12 @@
     display: grid;
     grid-template-columns: 1fr max-content;
     margin: 0.25rem;
+  }
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
   }
   &-header-actions {
     margin-right: -0.5rem;

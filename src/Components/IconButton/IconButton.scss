@@ -12,12 +12,26 @@
     font-size: 1.5rem;
     border-radius: 0.75rem;
   }
+  &-sm {
+    padding: 0.35rem;
+    font-size: 1.25rem;
+  }
   &-ghost {
     background: transparent;
     transition-property: background, color;
     color: #888888;
     &:hover {
       background: #fafafa;
+      color: #08060d;
+    }
+  }
+  &-round {
+    border-radius: 100%;
+    background: rgba($color: #fff, $alpha: 0.7);
+    transition-property: background, color;
+    color: #888888;
+    &:hover {
+      background: rgba($color: #fff, $alpha: 0.9);
       color: #08060d;
     }
   }

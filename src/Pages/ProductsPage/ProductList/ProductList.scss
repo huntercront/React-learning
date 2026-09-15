@@ -1,0 +1,14 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  grid-auto-flow: dense;
+  & > .product-wrap {
+    grid-column: span 2;
+  }
+  & > .product-wrap:nth-child(3n + 2) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+}

@@ -9,7 +9,7 @@ function Modal(props) {
     modalHeader = true,
     noPadding = false,
     children,
-    isOpen,
+    isOpen = false,
     onClose,
   } = props;
 
@@ -27,8 +27,8 @@ function Modal(props) {
 
   const onClickModalHandler = (event) => {
     event.stopPropagation();
-    console.log("Клик мне модального окна");
   };
+
   if (!isOpen) return null;
 
   return (

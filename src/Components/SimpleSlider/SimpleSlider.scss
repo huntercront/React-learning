@@ -1,0 +1,25 @@
+.s-slider {
+  position: relative;
+  width: 100%;
+  &-slide {
+    display: none;
+    &.active {
+      display: flex;
+    }
+  }
+  &-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(0, -50%);
+    padding: 0 0.75rem;
+    opacity: 0;
+    transition: 200ms ease-in;
+    transition-property: opacity;
+  }
+  &:hover &-controls {
+    opacity: 1;
+  }
+}

@@ -7,13 +7,12 @@ function IconButton(props) {
     buttonSize = "md",
     buttonType = "primary",
     onClick,
+    ...rest
   } = props;
-  const buttonClasses =
-    buttonClass +
-    `icon-btn icon-btn-${buttonSize} icon-btn-${buttonType} ${buttonClass}`;
+  const buttonClasses = `icon-btn icon-btn-${buttonSize} icon-btn-${buttonType} ${buttonClass}`;
   const IconToRender = IconComponent || PlaceholderIcon;
   return (
-    <button className={buttonClasses} onClick={onClick}>
+    <button className={buttonClasses} onClick={onClick} {...rest}>
       <span className={`svg-icon`}>
         <IconToRender />
       </span>

@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-list {
+    display: flex;
+    justify-content: center;
+    gap: 0.125rem;
+    & > li {
+      display: inline-flex;
+      & > a {
+        color: #08060d;
+        background: transparent;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        padding: 0.5rem 0.75rem;
+        border-radius: 2rem;
+        transition: 200ms ease-in;
+        transition-property: color, background;
+        &:hover {
+          background: rgba($color: #f73520, $alpha: 0.05);
+        }
+        &.active {
+          color: #f73520;
+        }
+      }
+    }
+  }
+}

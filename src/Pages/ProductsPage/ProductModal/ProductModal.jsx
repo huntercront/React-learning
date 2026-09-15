@@ -1,16 +1,18 @@
-import Modal from "../Components/Modal/Modal";
-import Button from "../Components/Button/Button";
-import StockStatus from "../StockStatus/StockStatus";
-import CloseIcon from "../Components/svg-Icons/CloseIcon";
-import HeartIcon from "../Components/svg-Icons/HeartIcon";
-import IconButton from "../Components/IconButton/IconButton";
+import Modal from "../../../Components/Modal/Modal";
+import Button from "../../../Components/Button/Button";
+import StockStatus from "../../../Components/StockStatus/StockStatus";
+import CloseIcon from "../../../Components/svg-Icons/CloseIcon";
+import HeartIcon from "../../../Components/svg-Icons/HeartIcon";
+import IconButton from "../../../Components/IconButton/IconButton";
+import Tag from "../../../Components/Tag/Tag";
+import SimpleSlider from "../../../Components/SimpleSlider/SimpleSlider";
 import "./ProductModal.scss";
+
 function ProductModal({ product, onClose }) {
-  console.log(product);
   const {
     title,
     images,
-    tags = "",
+    tags,
     price,
     description = "",
     stock,
@@ -31,19 +33,20 @@ function ProductModal({ product, onClose }) {
       modalHeader={false}
     >
       <div className="productmodal">
-        <div className="productmodal-img">
-          <img src={images[0]} alt={title} />
+        <div className="productmodal-imges">
+          <SimpleSlider slides={images} imgAlt={title} />
         </div>
         <div className="productmodal-product">
           <div className="productmodal-header">
-            {tags && <div className="productmodal-tags">{tags}</div>}
+            {tags && (
+              <div className="productmodal-tags">
+                {tags.map((tag, index) => (
+                  <Tag key={index} tagLabel={tag} tagColor="gray" />
+                ))}
+              </div>
+            )}
             <div className="productmodal-header-actions">
-              <IconButton
-                icon={HeartIcon}
-                buttonSize="md"
-                buttonType="ghost"
-                onClick={onClose}
-              />
+              <IconButton icon={HeartIcon} buttonSize="md" buttonType="ghost" />
               <IconButton
                 icon={CloseIcon}
                 buttonSize="md"
@@ -66,7 +69,7 @@ function ProductModal({ product, onClose }) {
             </div>
           </div>
           <div className="productmodal-actions">
-            <Button buttonLabel="В корзину" />
+            <Button buttonSize="lg" buttonLabel="В корзину" />
           </div>
         </div>
       </div>
